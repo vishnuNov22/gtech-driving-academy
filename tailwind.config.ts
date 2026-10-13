@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-// Red & white — sampled from the G-TECH poster (#FE0000 bright, #D2090F core, #AC0403 deep).
+// Red & white from the G-TECH poster (#D2090F core, #AC0403 deep). Sections alternate red / white.
 const config: Config = {
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
@@ -19,11 +19,20 @@ const config: Config = {
           900: "#5C0404",
           950: "#360202",
         },
-        // Dark maroon theme (client request): text tokens are light, surfaces are deep red.
-        ink: { DEFAULT: "#FFFFFF", soft: "#F1D3D3", mute: "#C79C9C", dark: "#1E1516" },
-        mist: "#2A0101",
-        line: "rgba(255,255,255,0.12)",
-        surface: "#360202",
+        // Theme tokens are CSS variables (see globals.css): dark maroon by default,
+        // flipped to white + red inside any element with the `light` class.
+        ink: {
+          DEFAULT: "rgb(var(--ink) / <alpha-value>)",
+          soft: "rgb(var(--ink-soft) / <alpha-value>)",
+          mute: "rgb(var(--ink-mute) / <alpha-value>)",
+          dark: "#1E1516",
+        },
+        surface: "rgb(var(--surface) / <alpha-value>)",
+        mist: "rgb(var(--mist) / <alpha-value>)",
+        accent: "rgb(var(--accent) / <alpha-value>)",
+        line: "var(--line)",
+        card: "var(--card)",
+        tint: "var(--tint)",
       },
       fontFamily: {
         sans: ["var(--font-manrope)", "ui-sans-serif", "system-ui", "sans-serif"],

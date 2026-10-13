@@ -19,6 +19,8 @@ No government certification, guaranteed licence, pass-rate or authority-affiliat
 Copy note: the family-owned line reads "A family-run academy…" (client asked to remove the word "local").
 
 ## Visual identity
-Dark maroon theme on every section (client request): surface #360202, mist #2A0101, footer #240101,
-red-600 #D2090F primary, red-400 #FF5C5C accents, white text, translucent white cards (bg-white/[0.06]). Fonts: Sora (headings) + Manrope (body).
+Alternating RED and PURE WHITE sections (client request). Hero = pure white with red text + red-framed video.
+Red sections (maroon #360202 / #2A0101 / red-900 / red-950): Ticker, Promise, Safety, Door to Door, RTO, FAQ, Contact, Footer.
+White sections (class="light" flips the CSS-variable tokens in globals.css): Stats, Training, Why Us, Signs, Team, Gallery, Enquiry.
+Use token classes (text-ink, text-ink-soft, text-accent, bg-card, bg-tint, border-line) so content works on both. Fonts: Sora (headings) + Manrope (body).
 Logo: learner silhouette + steering wheel (public/brand/logo-mark.svg, LogoMark component).

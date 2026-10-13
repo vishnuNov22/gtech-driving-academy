@@ -31,11 +31,11 @@ export function BrandPromise() {
   const [a, b] = ["Learn to Drive.", "Drive with Confidence."];
   return (
     <section aria-label={`${a} ${b}`} className="relative overflow-hidden bg-surface py-20 sm:py-28">
-      <LogoMark className="pointer-events-none absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 text-red-400/[0.06]" bg="#360202" />
+      <LogoMark className="pointer-events-none absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 text-accent/[0.06]" bg="#360202" />
       <div className="wrap relative text-center">
         <Reveal><span className="kicker justify-center">{SITE.tagline}</span></Reveal>
         <motion.p initial={{ opacity: 0, x: -60 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
-          className="mt-6 font-display text-[13vw] font-extrabold uppercase leading-[0.92] tracking-tight text-red-400 sm:text-7xl lg:text-8xl">
+          className="mt-6 font-display text-[13vw] font-extrabold uppercase leading-[0.92] tracking-tight text-accent sm:text-7xl lg:text-8xl">
           {a}
         </motion.p>
         <motion.p initial={{ opacity: 0, x: 60 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.9, delay: 0.12, ease: [0.2, 0.8, 0.2, 1] }}
@@ -72,11 +72,11 @@ export function Stats() {
     { v: "Family", l: "Owned & operated" },
   ];
   return (
-    <section className="relative z-10 -mt-px bg-surface">
+    <section className="light relative z-10 -mt-px bg-white">
       <div className="wrap grid grid-cols-2 gap-px overflow-hidden rounded-b-3xl bg-line lg:grid-cols-4">
         {stats.map((s, i) => (
-          <Reveal key={i} delay={i * 0.06} className="bg-white/[0.06] px-5 py-8 text-center sm:py-10">
-            <div className="font-display text-3xl font-extrabold text-red-400 sm:text-5xl">{s.v}</div>
+          <Reveal key={i} delay={i * 0.06} className="bg-card px-5 py-8 text-center sm:py-10">
+            <div className="font-display text-3xl font-extrabold text-accent sm:text-5xl">{s.v}</div>
             <div className="mt-2 text-sm text-ink-soft">{s.l}</div>
           </Reveal>
         ))}
@@ -100,11 +100,11 @@ export function Training() {
   const t = TRAINING[i];
   const Icon = TRAIN_ICON[t.icon];
   return (
-    <section id="training" className="section scroll-mt-16 bg-mist">
+    <section id="training" className="light section scroll-mt-16 bg-white">
       <div className="wrap">
         <Reveal>
           <span className="kicker">About & Training</span>
-          <h2 className="h2">Training built around <span className="text-red-400">you.</span></h2>
+          <h2 className="h2">Training built around <span className="text-accent">you.</span></h2>
           <p className="lead">G-TECH Motor Driving School is a family-owned driving school in Choondickal, Vellarada, helping first-time learners and people seeking refresher training build real confidence on the road.</p>
         </Reveal>
         <div className="mt-12 grid gap-6 lg:grid-cols-[380px_1fr]" onPointerEnter={(e) => e.pointerType === "mouse" && setPaused(true)} onPointerLeave={() => setPaused(false)}>
@@ -114,8 +114,8 @@ export function Training() {
               const on = k === i;
               return (
                 <button key={x.title} role="tab" aria-selected={on} onClick={() => setI(k)}
-                  className={`relative flex min-w-[240px] items-center gap-4 overflow-hidden rounded-2xl border p-4 text-left transition lg:min-w-0 ${on ? "border-red-600 bg-white/[0.06] shadow-card" : "border-line bg-white/[0.03] hover:bg-white/10"}`}>
-                  <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${on ? "bg-red-600 text-white" : "bg-red-50 text-red-400"}`}><I className="h-6 w-6" /></span>
+                  className={`relative flex min-w-[240px] items-center gap-4 overflow-hidden rounded-2xl border p-4 text-left transition lg:min-w-0 ${on ? "border-red-600 bg-card shadow-card" : "border-line bg-card hover:bg-tint"}`}>
+                  <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${on ? "bg-red-600 text-white" : "bg-tint text-accent"}`}><I className="h-6 w-6" /></span>
                   <span><b className="block font-display text-ink">{x.title}</b><small className="text-ink-mute">{x.short}</small></span>
                   {on && !reduced && !paused && <motion.span key={i} className="absolute bottom-0 left-0 h-[3px] bg-red-600" initial={{ width: 0 }} animate={{ width: "100%" }} transition={{ duration: 6, ease: "linear" }} />}
                 </button>
@@ -159,14 +159,14 @@ function Journey() {
     <div className="mt-20">
       <Reveal>
         <span className="kicker">Your Journey</span>
-        <h3 className="mt-3 text-2xl font-extrabold sm:text-4xl">From first lesson to <span className="text-red-400">open road</span></h3>
+        <h3 className="mt-3 text-2xl font-extrabold sm:text-4xl">From first lesson to <span className="text-accent">open road</span></h3>
       </Reveal>
       <ol className="relative mt-10 grid gap-4 md:grid-cols-5">
         <div className="absolute left-0 right-0 top-7 hidden h-[3px] bg-[repeating-linear-gradient(90deg,#D2090F_0_18px,transparent_18px_32px)] opacity-40 md:block" aria-hidden />
         {steps.map(([t, b], k) => (
           <Reveal key={t} delay={k * 0.08}>
             <li className="relative list-none">
-              <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-red-900 font-display text-lg font-extrabold text-red-300 shadow-card ring-4 ring-mist">0{k + 1}</span>
+              <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-red-600 font-display text-lg font-extrabold text-white shadow-glow ring-4 ring-white">0{k + 1}</span>
               <b className="mt-4 block font-display text-lg">{t}</b>
               <p className="mt-1 text-sm text-ink-soft">{b}</p>
             </li>
@@ -184,11 +184,11 @@ export function Safety() {
       <div className="wrap grid items-center gap-12 lg:grid-cols-2">
         <Reveal>
           <span className="kicker !text-red-300 before:!bg-red-300">Safety & Dual Control Vehicles</span>
-          <h2 className="mt-3 text-4xl font-extrabold leading-tight sm:text-6xl">Safety First.<br /><span className="text-red-400">Confidence Second.</span><br />Skill for Life.</h2>
+          <h2 className="mt-3 text-4xl font-extrabold leading-tight sm:text-6xl">Safety First.<br /><span className="text-accent">Confidence Second.</span><br />Skill for Life.</h2>
           <p className="mt-5 max-w-lg text-lg text-red-100/90">Our 5 star safety rated dual control vehicles mean your instructor has their own brake, so they can step in whenever needed while you learn calmly.</p>
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
             {[["5 Star Safety Rated", "Dual control vehicles"], ["Instructor-assisted", "Guidance at every turn"], ["Controlled practice", "Safe habits step by step"]].map(([a, b]) => (
-              <div key={a} className="rounded-2xl border border-white/10 bg-white/5 p-4"><ShieldCheck className="h-5 w-5 text-red-400" /><b className="mt-2 block text-sm">{a}</b><span className="text-xs text-red-100/80">{b}</span></div>
+              <div key={a} className="rounded-2xl border border-white/10 bg-white/5 p-4"><ShieldCheck className="h-5 w-5 text-accent" /><b className="mt-2 block text-sm">{a}</b><span className="text-xs text-red-100/80">{b}</span></div>
             ))}
           </div>
         </Reveal>
@@ -233,7 +233,7 @@ function DualControlDemo() {
     <div ref={box} className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur sm:p-6">
       <div className="flex items-start justify-between gap-4">
         <div><b className="block">Try it: dual control in action</b><small className="text-red-100/80">Hold the button to apply the instructor&apos;s brake</small></div>
-        <div className="text-right font-display"><span className={`text-4xl font-extrabold tabular-nums ${speed < 3 ? "text-red-400" : ""}`}>{speed}</span><small className="ml-1 text-xs text-red-100/80">KM/H</small></div>
+        <div className="text-right font-display"><span className={`text-4xl font-extrabold tabular-nums ${speed < 3 ? "text-accent" : ""}`}>{speed}</span><small className="ml-1 text-xs text-red-100/80">KM/H</small></div>
       </div>
       <div className="mt-4 overflow-hidden rounded-2xl">
         <svg viewBox="0 0 520 200" className="block w-full" aria-hidden>
@@ -256,7 +256,7 @@ function DualControlDemo() {
       </div>
       <button type="button" onPointerDown={start} onPointerUp={stop} onPointerLeave={stop} onPointerCancel={stop} onContextMenu={(e) => e.preventDefault()}
         onKeyDown={(e) => (e.key === " " || e.key === "Enter") && start(e)} onKeyUp={(e) => (e.key === " " || e.key === "Enter") && stop()}
-        className={`mt-4 flex h-14 w-full select-none items-center justify-center gap-2 rounded-2xl font-display text-base font-bold transition ${holding ? "scale-[0.98] bg-red-800 text-white" : "bg-red-600 text-white hover:bg-red-500"}`}
+        className={`mt-4 flex h-14 w-full select-none items-center justify-center gap-2 rounded-2xl font-display text-base font-bold transition ${holding ? "scale-[0.98] bg-red-800 text-white" : "bg-red-600 text-white hover:bg-tint0"}`}
         aria-label="Hold to apply the instructor's brake">
         {holding ? "Braking…" : "Hold: Instructor Brake"}
       </button>
@@ -269,11 +269,11 @@ function DualControlDemo() {
 export function WhyUs() {
   const icons = [Users, HeartHandshake, ShieldCheck, Home, Users];
   return (
-    <section id="why" className="section scroll-mt-16 bg-surface">
+    <section id="why" className="light section scroll-mt-16 bg-white">
       <div className="wrap">
         <Reveal className="text-center">
           <span className="kicker">Why Choose Us</span>
-          <h2 className="h2">Why learners choose <span className="text-red-400">G-TECH</span></h2>
+          <h2 className="h2">Why learners choose <span className="text-accent">G-TECH</span></h2>
         </Reveal>
         <div className="mt-12 grid auto-rows-[minmax(190px,auto)] gap-4 md:grid-cols-3">
           {WHY.map((w, k) => {
@@ -289,7 +289,7 @@ export function WhyUs() {
                     </>
                   ) : (
                     <>
-                      <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-red-50 text-red-400"><I className="h-6 w-6" /></span>
+                      <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-tint text-accent"><I className="h-6 w-6" /></span>
                       <div className="mt-auto pt-6"><h3 className="text-lg font-extrabold text-ink">{w.title}</h3><p className="mt-1.5 text-sm text-ink-soft">{w.body}</p></div>
                     </>
                   )}
@@ -316,7 +316,7 @@ function TiltCard({ children, big }: { children: React.ReactNode; big?: boolean 
   const leave = () => { if (ref.current) ref.current.style.transform = ""; };
   return (
     <div ref={ref} onPointerMove={move} onPointerLeave={leave}
-      className={`group relative flex h-full flex-col overflow-hidden rounded-3xl p-7 transition-transform duration-200 ${big ? "bg-red-600 text-white shadow-glow" : "border border-line bg-white/[0.06] shadow-card"}`}>
+      className={`group relative flex h-full flex-col overflow-hidden rounded-3xl p-7 transition-transform duration-200 ${big ? "bg-red-600 text-white shadow-glow" : "border border-line bg-card shadow-card"}`}>
       <span className="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100"
         style={{ background: `radial-gradient(400px circle at var(--mx,50%) var(--my,50%), ${big ? "rgba(255,255,255,.18)" : "rgba(210,9,15,.07)"}, transparent 60%)` }} />
       <div className="relative flex h-full flex-col">{children}</div>
@@ -332,7 +332,7 @@ export function DoorToDoor() {
       <div className="wrap grid items-center gap-10 lg:grid-cols-2">
         <Reveal>
           <span className="kicker">Door to Door Service</span>
-          <h2 className="h2">Training That <span className="text-red-400">Fits Your Routine.</span></h2>
+          <h2 className="h2">Training That <span className="text-accent">Fits Your Routine.</span></h2>
           <p className="lead">G-TECH offers door to door service, 7 days a week, so driving lessons fit around work, college and family life.</p>
           <a href={waLink("Hello G-TECH, I'd like to ask about door to door pickup for my area.")} target="_blank" rel="noopener" className="btn-red mt-8"><WhatsAppIcon className="h-4 w-4" /> Ask About Pickup</a>
         </Reveal>
@@ -347,8 +347,8 @@ export function DoorToDoor() {
                 </motion.div>
               ))}
             </div>
-            <div className="mt-6 flex items-center gap-3 rounded-2xl bg-red-50 p-4 text-sm text-ink-soft">
-              <Navigation className="h-5 w-5 shrink-0 text-red-400" /> Call or WhatsApp us to check pickup availability for your area.
+            <div className="mt-6 flex items-center gap-3 rounded-2xl bg-tint p-4 text-sm text-ink-soft">
+              <Navigation className="h-5 w-5 shrink-0 text-accent" /> Call or WhatsApp us to check pickup availability for your area.
             </div>
           </div>
         </Reveal>
@@ -361,11 +361,11 @@ export function DoorToDoor() {
 export function Signs() {
   const [flipped, setFlipped] = useState<number | null>(null);
   return (
-    <section className="section bg-surface">
+    <section className="light section bg-white">
       <div className="wrap">
         <Reveal className="text-center">
           <span className="kicker">Learn the Basics</span>
-          <h2 className="h2">Know your <span className="text-red-400">road signs</span></h2>
+          <h2 className="h2">Know your <span className="text-accent">road signs</span></h2>
           <p className="lead mx-auto">Tap or hover a sign to see what it means.</p>
         </Reveal>
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
@@ -376,7 +376,7 @@ export function Signs() {
                 <button type="button" onClick={() => setFlipped(on ? null : k)} onMouseEnter={() => setFlipped(k)} onMouseLeave={() => setFlipped(null)}
                   aria-label={`${s.name}: ${s.tip}`} className="group h-56 w-full [perspective:900px]">
                   <span className={`relative block h-full w-full rounded-3xl transition-transform duration-700 [transform-style:preserve-3d] ${on ? "[transform:rotateY(180deg)]" : ""}`}>
-                    <span className="absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-3xl border border-line bg-white/[0.06] shadow-card [backface-visibility:hidden]">
+                    <span className="absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-3xl border border-line bg-card shadow-card [backface-visibility:hidden]">
                       <SignSvg kind={s.kind} className="h-24 w-24 drop-shadow" />
                       <small className="font-display font-bold text-ink">{s.name}</small>
                     </span>
@@ -408,7 +408,7 @@ export function Rto() {
         <ol className="grid gap-4">
           {RTO_STEPS.map((s, k) => (
             <Reveal key={s.title} delay={k * 0.08}>
-              <li className="flex list-none gap-5 rounded-3xl bg-white/[0.06] p-5 text-ink shadow-card">
+              <li className="flex list-none gap-5 rounded-3xl bg-card p-5 text-ink shadow-card">
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-red-600 font-display text-xl font-extrabold text-white">{k + 1}</span>
                 <div><b className="font-display text-lg">{s.title}</b><p className="mt-1 text-sm text-ink-soft">{s.body}</p></div>
               </li>
@@ -423,23 +423,23 @@ export function Rto() {
 /* ------------------------------------------------------------- team */
 export function Team() {
   return (
-    <section id="team" className="section scroll-mt-16 bg-surface">
+    <section id="team" className="light section scroll-mt-16 bg-white">
       <div className="wrap">
         <Reveal className="text-center">
           <span className="kicker">Our Team</span>
-          <h2 className="h2">Meet the people behind <span className="text-red-400">G-TECH</span></h2>
+          <h2 className="h2">Meet the people behind <span className="text-accent">G-TECH</span></h2>
         </Reveal>
         <div className="mx-auto mt-12 grid max-w-3xl gap-6 sm:grid-cols-2">
           {TEAM.map((m, k) => (
             <Reveal key={m.name} delay={k * 0.1}>
-              <div className="group relative overflow-hidden rounded-[28px] border border-line bg-white/[0.06] p-8 text-center shadow-card">
+              <div className="group relative overflow-hidden rounded-[28px] border border-line bg-card p-8 text-center shadow-card">
                 <div className="absolute inset-x-0 top-0 h-28 bg-red-600 transition-all duration-500 group-hover:h-32" />
-                <div className="relative mx-auto flex h-32 w-32 items-center justify-center overflow-hidden rounded-full border-[6px] border-white bg-red-50 font-display text-5xl font-extrabold text-red-400 shadow-card">
+                <div className="relative mx-auto flex h-32 w-32 items-center justify-center overflow-hidden rounded-full border-[6px] border-white bg-tint font-display text-5xl font-extrabold text-accent shadow-card">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   {m.photo ? <img src={m.photo} alt={`${m.name}, ${m.role}`} className="h-full w-full object-cover" /> : m.name.split(" ").map((x) => x[0]).join("")}
                 </div>
                 <h3 className="relative mt-5 text-2xl font-extrabold">{m.name}</h3>
-                <span className="relative mt-1 inline-block rounded-full bg-red-50 px-3 py-1 text-sm font-bold text-red-700">{m.role}</span>
+                <span className="relative mt-1 inline-block rounded-full bg-tint px-3 py-1 text-sm font-bold text-accent">{m.role}</span>
               </div>
             </Reveal>
           ))}
@@ -457,17 +457,17 @@ export function Faq() {
       <div className="wrap grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <Reveal>
           <span className="kicker">Questions</span>
-          <h2 className="h2">Good to <span className="text-red-400">know</span></h2>
+          <h2 className="h2">Good to <span className="text-accent">know</span></h2>
           <p className="lead">Still unsure? Call or WhatsApp us and we&apos;ll guide you.</p>
         </Reveal>
         <div className="grid gap-3">
           {FAQ.map(([q, a], k) => {
             const on = open === k;
             return (
-              <div key={q} className={`overflow-hidden rounded-2xl border bg-white/[0.06] transition ${on ? "border-red-600 shadow-card" : "border-line"}`}>
+              <div key={q} className={`overflow-hidden rounded-2xl border bg-card transition ${on ? "border-red-600 shadow-card" : "border-line"}`}>
                 <button type="button" aria-expanded={on} onClick={() => setOpen(on ? -1 : k)} className="flex w-full items-center justify-between gap-4 p-5 text-left font-display font-bold">
                   {q}
-                  <ChevronDown className={`h-5 w-5 shrink-0 text-red-400 transition-transform ${on ? "rotate-180" : ""}`} />
+                  <ChevronDown className={`h-5 w-5 shrink-0 text-accent transition-transform ${on ? "rotate-180" : ""}`} />
                 </button>
                 <AnimatePresence initial={false}>
                   {on && (
@@ -489,9 +489,9 @@ export function Faq() {
 export function Gallery() {
   if (!GALLERY.length) return null;
   return (
-    <section id="gallery" className="section bg-surface">
+    <section id="gallery" className="light section bg-white">
       <div className="wrap">
-        <Reveal><span className="kicker">Gallery</span><h2 className="h2">Life at <span className="text-red-400">G-TECH</span></h2></Reveal>
+        <Reveal><span className="kicker">Gallery</span><h2 className="h2">Life at <span className="text-accent">G-TECH</span></h2></Reveal>
         <div className="mt-10 columns-1 gap-4 sm:columns-2 lg:columns-3">
           {GALLERY.map((g) => (
             // eslint-disable-next-line @next/next/no-img-element
@@ -541,20 +541,20 @@ export function Enquiry() {
   const pick = (setter: (v: string) => void, v: string) => { setter(v); setErr({}); setTimeout(() => setStep((s) => Math.min(3, s + 1)), 320); };
   const Opt = ({ v, sub, on, onClick, icon: I }: { v: string; sub: string; on: boolean; onClick: () => void; icon: typeof Bike }) => (
     <button type="button" onClick={onClick} aria-pressed={on}
-      className={`flex items-center gap-4 rounded-2xl border-2 p-4 text-left transition ${on ? "border-red-600 bg-red-50" : "border-line bg-white/[0.06] hover:border-red-300"}`}>
-      <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${on ? "bg-red-600 text-white" : "bg-red-50 text-red-400"}`}><I className="h-6 w-6" /></span>
+      className={`flex items-center gap-4 rounded-2xl border-2 p-4 text-left transition ${on ? "border-red-600 bg-tint" : "border-line bg-card hover:border-red-300"}`}>
+      <span className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${on ? "bg-red-600 text-white" : "bg-tint text-accent"}`}><I className="h-6 w-6" /></span>
       <span><b className="block font-display">{v}</b><small className="text-ink-mute">{sub}</small></span>
     </button>
   );
-  const input = "mt-1.5 h-12 w-full rounded-xl border border-line bg-white/[0.06] px-4 text-base outline-none transition text-white placeholder:text-red-200/50 focus:border-red-400 focus:ring-4 focus:ring-red-900 [&_option]:bg-surface";
+  const input = "mt-1.5 h-12 w-full rounded-xl border border-line bg-card px-4 text-base outline-none transition text-ink placeholder:text-ink-mute/60 focus:border-red-600 focus:ring-4 focus:ring-red-600/15 [&_option]:bg-surface [&_option]:text-ink";
 
   return (
-    <section id="enquire" className="section scroll-mt-16 relative overflow-hidden bg-surface">
-      <div className="pointer-events-none absolute -right-40 -top-40 h-[480px] w-[480px] rounded-full bg-red-50" aria-hidden />
+    <section id="enquire" className="light section scroll-mt-16 relative overflow-hidden bg-white">
+      <div className="pointer-events-none absolute -right-40 -top-40 h-[480px] w-[480px] rounded-full bg-tint" aria-hidden />
       <div className="wrap relative grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal>
           <span className="kicker">Enquiry & Admission</span>
-          <h2 className="h2">Start your training <span className="text-red-400">today.</span></h2>
+          <h2 className="h2">Start your training <span className="text-accent">today.</span></h2>
           <p className="lead">Three quick steps. Your enquiry opens in WhatsApp, ready to send to G-TECH. Prefer to talk? Call us directly.</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href={telLink} className="btn-red"><Phone className="h-4 w-4" /> Call {fmtPhone(SITE.phone)}</a>
@@ -575,8 +575,8 @@ export function Enquiry() {
               </div>
             ) : (
               <>
-                <div className="flex items-center justify-between text-sm font-bold"><span>Step {step} of 3</span><span className="text-red-400">{["Training type", "Experience", "Your details"][step - 1]}</span></div>
-                <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-red-50"><motion.div className="h-full bg-red-600" animate={{ width: `${(step / 3) * 100}%` }} /></div>
+                <div className="flex items-center justify-between text-sm font-bold"><span>Step {step} of 3</span><span className="text-accent">{["Training type", "Experience", "Your details"][step - 1]}</span></div>
+                <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-tint"><motion.div className="h-full bg-red-600" animate={{ width: `${(step / 3) * 100}%` }} /></div>
                 <AnimatePresence mode="wait">
                   <motion.div key={step} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.25 }} className="mt-6">
                     {step === 1 && (
@@ -595,8 +595,8 @@ export function Enquiry() {
                     )}
                     {step === 3 && (
                       <div className="grid gap-4 sm:grid-cols-2">
-                        <label className="text-sm font-semibold">Name<input className={input} value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" />{err.name && <span className="mt-1 block text-xs text-red-400">{err.name}</span>}</label>
-                        <label className="text-sm font-semibold">Phone Number<input className={input} value={phone} onChange={(e) => setPhone(e.target.value)} inputMode="tel" autoComplete="tel" />{err.phone && <span className="mt-1 block text-xs text-red-400">{err.phone}</span>}</label>
+                        <label className="text-sm font-semibold">Name<input className={input} value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" />{err.name && <span className="mt-1 block text-xs text-accent">{err.name}</span>}</label>
+                        <label className="text-sm font-semibold">Phone Number<input className={input} value={phone} onChange={(e) => setPhone(e.target.value)} inputMode="tel" autoComplete="tel" />{err.phone && <span className="mt-1 block text-xs text-accent">{err.phone}</span>}</label>
                         <label className="text-sm font-semibold sm:col-span-2">Preferred Training Time
                           <select className={input} value={time} onChange={(e) => setTime(e.target.value)}>
                             <option value="">Choose a time (optional)</option>
@@ -607,9 +607,9 @@ export function Enquiry() {
                     )}
                   </motion.div>
                 </AnimatePresence>
-                {err.s && <p className="mt-3 text-sm text-red-400">{err.s}</p>}
+                {err.s && <p className="mt-3 text-sm text-accent">{err.s}</p>}
                 <div className="mt-6 flex items-center justify-between gap-3">
-                  {step > 1 ? <button type="button" onClick={() => { setStep(step - 1); setErr({}); }} className="text-sm font-bold text-ink-soft hover:text-white">← Back</button> : <span />}
+                  {step > 1 ? <button type="button" onClick={() => { setStep(step - 1); setErr({}); }} className="text-sm font-bold text-ink-soft hover:text-accent">← Back</button> : <span />}
                   <button type="button" onClick={next} className="btn-red">{step === 3 ? <><WhatsAppIcon className="h-4 w-4" /> Enquire Now</> : <>Continue <ArrowRight className="h-4 w-4" /></>}</button>
                 </div>
               </>
@@ -627,15 +627,15 @@ export function Contact() {
   return (
     <section id="contact" className="section scroll-mt-16 bg-mist">
       <div className="wrap">
-        <Reveal><span className="kicker">Contact & Location</span><h2 className="h2">Find <span className="text-red-400">G-TECH</span></h2></Reveal>
+        <Reveal><span className="kicker">Contact & Location</span><h2 className="h2">Find <span className="text-accent">G-TECH</span></h2></Reveal>
         <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1.4fr]">
           <Reveal>
             <div className="card flex h-full flex-col gap-5 p-7">
               <Brand />
-              <div className="flex gap-3"><MapPin className="h-5 w-5 shrink-0 text-red-400" /><span>{SITE.addressLines.map((l) => <span key={l} className="block">{l}</span>)}</span></div>
-              <a href={telLink} className="flex gap-3 hover:text-white"><Phone className="h-5 w-5 shrink-0 text-red-400" /> {fmtPhone(SITE.phone)} <span className="text-ink-mute">(calls)</span></a>
-              <a href={waLink(DEFAULT_WA)} target="_blank" rel="noopener" className="flex gap-3 hover:text-white"><WhatsAppIcon className="h-5 w-5 shrink-0 text-red-400" /> {fmtPhone(SITE.whatsapp)} <span className="text-ink-mute">(WhatsApp)</span></a>
-              <a href={`mailto:${SITE.email}`} className="flex gap-3 break-all hover:text-white"><Mail className="h-5 w-5 shrink-0 text-red-400" /> {SITE.email}</a>
+              <div className="flex gap-3"><MapPin className="h-5 w-5 shrink-0 text-accent" /><span>{SITE.addressLines.map((l) => <span key={l} className="block">{l}</span>)}</span></div>
+              <a href={telLink} className="flex gap-3 hover:text-accent"><Phone className="h-5 w-5 shrink-0 text-accent" /> {fmtPhone(SITE.phone)} <span className="text-ink-mute">(calls)</span></a>
+              <a href={waLink(DEFAULT_WA)} target="_blank" rel="noopener" className="flex gap-3 hover:text-accent"><WhatsAppIcon className="h-5 w-5 shrink-0 text-accent" /> {fmtPhone(SITE.whatsapp)} <span className="text-ink-mute">(WhatsApp)</span></a>
+              <a href={`mailto:${SITE.email}`} className="flex gap-3 break-all hover:text-accent"><Mail className="h-5 w-5 shrink-0 text-accent" /> {SITE.email}</a>
               <div className="mt-auto flex flex-wrap gap-3 pt-2">
                 <a href={dir} target="_blank" rel="noopener" className="btn-red"><Navigation className="h-4 w-4" /> Get Directions</a>
                 <a href={telLink} className="btn-ghost"><Phone className="h-4 w-4" /> Call Now</a>
@@ -643,7 +643,7 @@ export function Contact() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="overflow-hidden rounded-3xl border border-line bg-white/[0.06] shadow-card">
+            <div className="overflow-hidden rounded-3xl border border-line bg-card shadow-card">
               <iframe title="Map of Choondickal, Vellarada" src={`https://www.google.com/maps?q=${encodeURIComponent(SITE.mapQuery)}&output=embed`}
                 className="h-[360px] w-full sm:h-[440px]" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
               <p className="p-4 text-xs text-ink-mute">Map shows the Choondickal, Vellarada area. Call us for exact directions.</p>
@@ -672,7 +672,7 @@ export function Footer() {
             <b className="font-display">Explore</b>
             <ul className="mt-4 grid gap-2 text-red-100">
               {[["Home", "#home"], ["Training", "#training"], ["Why Choose Us", "#why"], ["RTO Support", "#rto"], ["Team", "#team"], ["Contact", "#contact"]].map(([l, h]) => (
-                <li key={h}><a href={h} className="hover:text-white">{l}</a></li>
+                <li key={h}><a href={h} className="hover:text-accent">{l}</a></li>
               ))}
             </ul>
           </div>
