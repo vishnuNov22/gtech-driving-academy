@@ -1,36 +1,23 @@
-# G-TECH MOTOR DRIVING ACADEMY — PROJECT RULES
-
-Read this entire file before writing code.
+# G-TECH MOTOR DRIVING SCHOOL — PROJECT RULES (v2, Next.js)
 
 - Professional, trustworthy, modern driving school website. NOT an ecommerce site.
-- Focus: training, safety, RTO support, contact and admissions.
-- Everything in index.html (HTML + CSS + JS). No React, npm, package.json or build tools.
-- Fully responsive. Accessible buttons, forms, semantic headings, tel/WhatsApp links.
+- Stack: Next.js 15 (App Router, static export) + Tailwind + three.js (3D story) + framer-motion.
+- All content lives in src/content/site.ts (EDIT HERE).
 
 ## Business information (use exactly)
-- G-TECH MOTOR DRIVING ACADEMY — Choondickal, Vellarada, Trivandrum, Kerala — 695505
-- Managing Director: Shaji · Instructor: Athul
-- Phone (calls): 8075732441 · WhatsApp (enquiries): 8590392667
-- Tagline: Join #DriveWithGtech and start your journey today!
-- Do not invent street address, email, website URL, social handles, extra phone numbers.
+- G-TECH Motor Driving School — Choondickal, Vellarada, Trivandrum, Kerala — 695505
+- Managing Director: Meethi Shaji · Instructor: Athul Dev
+- Phone (calls): 8075732441 · WhatsApp (enquiries): 8590392667 · Email: sathi7474@gmail.com
+- Tagline (client theme): "DRIVEN BY QUALITY · DEFINED BY TRUST" — shown in the hero, the promise band, the preloader and the footer · Join #DriveWithGtech and start your journey today!
+- Do not invent street address, website URL, social handles or extra phone numbers.
 
 ## Supplied claims only
 Family Owned & Operated · More Than 5000 Students Trained · 5 Star Safety Rated Dual Control Vehicles ·
 Door to Door Service 7 Days A Week · Trained & Experienced Instructors.
-No government certification, guaranteed licence, pass-rate or authority-affiliation claims.
+No government certification, guaranteed licence, pass-rate or authority-affiliation claims. No offers/countdowns.
+Copy note: the family-owned line reads "A family-run academy…" (client asked to remove the word "local").
 
 ## Visual identity
-Deep Navy #12304A (primary) · Teal #0F766E (training/safety) · Amber #F59E0B (CTAs) ·
-Cool White #F4F8FA (backgrounds) · Dark Slate #243746 (text). Do NOT use black/gold/cream/blush.
-Fonts: Sora (headings) + Manrope (body).
-
-## Editing
-All content lives in the EDIT HERE block at the top of the <script>: SITE, TRAINING, WHY, TEAM, GALLERY.
-Gallery section stays hidden until real G-TECH photos are added to GALLERY.
-Map: Google Maps embed of the area query in SITE.mapQuery (area-level, no invented coordinates). Get Directions uses the same query.
-Also editable: SIGNS (road sign flip cards) and FAQ (answers must only use supplied claims).
-Motion: preloader, scroll progress road, word-reveal headings, hero parallax + two/four-wheeler switch, auto-cycling training panel,
-journey progress line, dual-control brake demo, gauge counter, bento spotlight + tilt, flip cards, FAQ accordion, 3-step WhatsApp wizard.
-All motion respects prefers-reduced-motion.
-Enquiry form validates locally and opens WhatsApp with the enquiry pre-filled. No database.
-No temporary offers, dates or countdowns.
+Red & white only (from the client poster): red-600 #D2090F (primary), red-700 #AC0403, bright #F5222A,
+white backgrounds, mist #FBF6F6, warm ink #1E1516 for text. Fonts: Sora (headings) + Manrope (body).
+Logo: learner silhouette + steering wheel (public/brand/logo-mark.svg, LogoMark component).

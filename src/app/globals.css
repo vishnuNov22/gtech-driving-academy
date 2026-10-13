@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+  body { @apply bg-white font-sans text-ink antialiased; }
+  h1, h2, h3 { @apply font-display; }
+  :focus-visible { @apply outline-none ring-2 ring-red-600 ring-offset-2; }
+  ::selection { @apply bg-red-600 text-white; }
+}
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-7xl px-5 sm:px-8; }
+  .section { @apply py-20 sm:py-28; }
+  .kicker { @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-red-600; }
+  .kicker::before { content: ""; @apply h-[2px] w-6 rounded-full bg-red-600; }
+  .h2 { @apply mt-3 font-display text-3xl font-extrabold leading-tight tracking-tight text-ink sm:text-5xl; }
+  .lead { @apply mt-4 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg; }
+  .btn-red { @apply inline-flex h-12 items-center justify-center gap-2 rounded-full bg-red-600 px-6 text-sm font-bold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-red-700 active:translate-y-0; }
+  .btn-white { @apply inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-bold text-red-700 transition hover:-translate-y-0.5 hover:bg-red-50; }
+  .btn-ghost { @apply inline-flex h-12 items-center justify-center gap-2 rounded-full border border-red-600/25 bg-white/80 px-5 text-sm font-bold text-ink backdrop-blur transition hover:border-red-600 hover:text-red-700; }
+  .chip { @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-white/85 px-3 py-1.5 font-medium text-ink-soft backdrop-blur; }
+  .card { @apply rounded-3xl border border-line bg-white shadow-card; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

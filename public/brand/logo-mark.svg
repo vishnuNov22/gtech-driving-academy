@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 312 328" fill="none" stroke="currentColor">
+  <!-- G-TECH mark (vector version of the poster logo): learner silhouette + steering wheel -->
+  <circle cx="153" cy="67" r="62" stroke-width="5"/>
+  <path d="M26 264 C 26 185 82 133 153 133 C 224 133 282 185 282 264 Z" stroke-width="5"/>
+  <g fill="currentColor" stroke="none">
+    <circle cx="154" cy="264" r="58"/>
+  </g>
+  <g fill="var(--logo-bg, #D2090F)" stroke="none">
+    <path d="M154 216a48 48 0 0 0-46 34c14-6 30-9 46-9s32 3 46 9a48 48 0 0 0-46-34z"/>
+    <path d="M108 270a48 48 0 0 0 36 40l-6-30c-8-6-18-9-30-10z"/>
+    <path d="M200 270a48 48 0 0 1-36 40l6-30c8-6 18-9 30-10z"/>
+    <circle cx="154" cy="266" r="12"/>
+  </g>
+</svg>
