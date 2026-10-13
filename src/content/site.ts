@@ -63,7 +63,7 @@ export const TRAINING: Training[] = [
 export const HERO_VIDEO = {
   mp4: "/videos/hero-h-test.mp4",
   webm: "", // optional, e.g. "/videos/hero-h-test.webm"
-  poster: "", // optional still image, e.g. "/videos/hero-poster.jpg"
+  poster: "/videos/hero-poster.jpg",
 };
 
 export const WHY = [

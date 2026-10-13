@@ -1,3 +1,3 @@
-Put the hero video here as: hero-h-test.mp4  (H.264, no audio, ~1920px wide, under ~8 MB)
-Optional: hero-h-test.webm and hero-poster.jpg (then set them in src/content/site.ts -> HERO_VIDEO).
-Until hero-h-test.mp4 exists, the site shows an animated H-track instead.
+hero-h-test.mp4 / hero-poster.jpg: red & white top-down animation of a car doing the Kerala H test (silent, 16 s loop).
+To use your own footage instead (e.g. a real car at the test ground), replace hero-h-test.mp4 with the same name
+(H.264, no audio, under ~8 MB) and replace hero-poster.jpg with a still from it.
