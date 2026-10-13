@@ -1,5 +1,5 @@
 import { FloatingActions, Navbar, Preloader } from "@/components/Chrome";
-import { Story } from "@/components/story/Story";
+import { HeroVideo } from "@/components/HeroVideo";
 import {
   Contact, DoorToDoor, Enquiry, Faq, Footer, Gallery, BrandPromise, Rto, Safety, Signs, Stats, Team, Ticker, Training, WhyUs,
 } from "@/components/sections";
@@ -10,7 +10,7 @@ export default function Home() {
       <Preloader />
       <Navbar />
       <main>
-        <Story />
+        <HeroVideo />
         <Ticker />
         <Stats />
         <BrandPromise />

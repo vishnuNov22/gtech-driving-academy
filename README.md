@@ -1,8 +1,8 @@
-# G-TECH Motor Driving School: website v2 (Next.js + 3D)
+# G-TECH Motor Driving School: website v3 (Next.js)
 
-This version uses a red & white theme taken from the G-TECH poster. The first screen is a
-scroll-driven **3D story**: a red G-TECH car drives a winding road through five chapters as the
-visitor scrolls.
+Dark maroon & red theme across the whole site (client request). The first screen is a full-screen,
+**muted, auto-playing, looping video** of a car taking the Kerala "H" test, with the tagline
+DRIVEN BY QUALITY / DEFINED BY TRUST on top. No 3D / three.js any more.
 
 ## Run it on your laptop
 
@@ -30,21 +30,20 @@ Everything is in **`src/content/site.ts`**:
 | Phone, WhatsApp, email, address, map | `SITE` |
 | Team names, roles and photos | `TEAM` (put photos in `public/images/` and set, for example, `photo: "/images/athul-dev.jpg"`) |
 | Training cards | `TRAINING` |
-| 3D story chapter text | `STORY` |
+| Hero video files | `HERO_VIDEO` |
 | Why-us cards | `WHY` |
 | Road signs, RTO steps, FAQ | `SIGNS`, `RTO_STEPS`, `FAQ` |
 | Gallery | `GALLERY` (the section stays hidden until you add a photo) |
 
-## The 3D story (`src/components/story/`)
+## The hero video
 
-- `world.ts` holds the three.js scene: road with red-white kerbs, the G-TECH car with an L-board,
-  a start gate, a dual-control halo, road signs that pop up, a town with traffic, and the
-  `#DriveWithGtech` finish arch.
-- `Story.tsx` connects scroll position to the scene and shows the chapter cards.
-- On phones it automatically uses lighter graphics (no shadows, fewer trees).
-- If WebGL isn't available, a red poster-style background is shown instead. The chapter text still works.
-- If the visitor has `prefers-reduced-motion` on, idle animations are switched off and the
-  scene follows the scroll directly.
+1. Put the video at `public/videos/hero-h-test.mp4` (H.264, no audio, about 1920px wide, ideally under 8 MB).
+2. Optional: add `hero-h-test.webm` and a still `hero-poster.jpg`, then set them in `HERO_VIDEO` in `src/content/site.ts`.
+3. Compress with ffmpeg if needed:
+   `ffmpeg -i input.mp4 -an -vcodec libx264 -crf 28 -preset slow -movflags +faststart -vf scale=1920:-2 hero-h-test.mp4`
+
+The video always plays without sound (`muted`, `playsInline`, `loop`) so it autoplays on phones too, and visitors
+can pause it. If the file is missing, an animated H-track drawing is shown instead.
 
 ## Rules kept from v1
 

@@ -1,7 +1,8 @@
 # G-TECH MOTOR DRIVING SCHOOL — PROJECT RULES (v2, Next.js)
 
 - Professional, trustworthy, modern driving school website. NOT an ecommerce site.
-- Stack: Next.js 15 (App Router, static export) + Tailwind + three.js (3D story) + framer-motion.
+- Stack: Next.js 15 (App Router, static export) + Tailwind + framer-motion. No three.js / 3D (client removed it).
+- Hero: muted, autoplay, looping video of a car doing the Kerala H test (public/videos/hero-h-test.mp4, HERO_VIDEO in site.ts); animated SVG H-track fallback.
 - All content lives in src/content/site.ts (EDIT HERE).
 
 ## Business information (use exactly)
@@ -18,6 +19,6 @@ No government certification, guaranteed licence, pass-rate or authority-affiliat
 Copy note: the family-owned line reads "A family-run academy…" (client asked to remove the word "local").
 
 ## Visual identity
-Red & white only (from the client poster): red-600 #D2090F (primary), red-700 #AC0403, bright #F5222A,
-white backgrounds, mist #FBF6F6, warm ink #1E1516 for text. Fonts: Sora (headings) + Manrope (body).
+Dark maroon theme on every section (client request): surface #360202, mist #2A0101, footer #240101,
+red-600 #D2090F primary, red-400 #FF5C5C accents, white text, translucent white cards (bg-white/[0.06]). Fonts: Sora (headings) + Manrope (body).
 Logo: learner silhouette + steering wheel (public/brand/logo-mark.svg, LogoMark component).

@@ -58,19 +58,13 @@ export const TRAINING: Training[] = [
     points: ["Clear explanations", "Support through the process", "Ask us anytime"] },
 ];
 
-/** The 3D scroll story. `at` = where along the road (0–1) the chapter is centred. */
-export const STORY = [
-  { kicker: "Chapter 01", title: "Your first seat", at: 0.2,
-    body: "Every journey starts with a calm first lesson. Trained & experienced instructors guide you from day one, and beginners are always welcome." },
-  { kicker: "Chapter 02", title: "Dual control. Total calm.", at: 0.4,
-    body: "Practise in 5 star safety rated dual control vehicles. Your instructor has their own brake, ready whenever you need it." },
-  { kicker: "Chapter 03", title: "Read the road", at: 0.6,
-    body: "Stop, give way, speed limits, pedestrian crossings. Learn the signs and safe habits until they become second nature." },
-  { kicker: "Chapter 04", title: "Practice that fits your life", at: 0.78,
-    body: "Door to door service, 7 days a week, so your lessons fit around work, college and family." },
-  { kicker: "Chapter 05", title: "The RTO step, made simple", at: 0.95,
-    body: "Support with RTO procedures, explained in plain language, so you can focus on driving. More than 5000 students have started here." },
-];
+// Hero background video (muted, looping). Drop your files into public/videos/.
+// If the mp4 is missing, an animated H-track drawing is shown instead.
+export const HERO_VIDEO = {
+  mp4: "/videos/hero-h-test.mp4",
+  webm: "", // optional, e.g. "/videos/hero-h-test.webm"
+  poster: "", // optional still image, e.g. "/videos/hero-poster.jpg"
+};
 
 export const WHY = [
   { title: "More Than 5000 Students Trained", body: "Thousands of learners have started their driving journey with G-TECH.", big: true },

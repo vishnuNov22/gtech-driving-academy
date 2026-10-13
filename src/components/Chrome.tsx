@@ -19,7 +19,7 @@ export function Brand({ light = false }: { light?: boolean }) {
       </span>
       <span className="leading-none">
         <span className={`block font-display text-xl font-extrabold tracking-tight ${light ? "text-white" : "text-ink"}`}>G-TECH</span>
-        <span className={`block text-[10px] font-bold uppercase tracking-[0.18em] ${light ? "text-red-100" : "text-red-600"}`}>Motor Driving School</span>
+        <span className={`block text-[10px] font-bold uppercase tracking-[0.18em] ${light ? "text-red-100" : "text-red-400"}`}>Motor Driving School</span>
       </span>
     </a>
   );
@@ -40,16 +40,16 @@ export function Navbar() {
 
   return (
     <>
-      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/90 shadow-[0_6px_30px_-12px_rgba(92,4,4,.25)] backdrop-blur-lg" : "bg-transparent"}`}>
+      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "bg-surface/90 shadow-[0_6px_30px_-12px_rgba(0,0,0,.6)] backdrop-blur-lg" : "bg-transparent"}`}>
         <div className="wrap flex h-16 items-center justify-between gap-4 sm:h-[72px]">
           <Brand />
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
             {LINKS.map(([l, h]) => (
-              <a key={h} href={h} className="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-soft transition hover:bg-red-50 hover:text-red-700">{l}</a>
+              <a key={h} href={h} className="rounded-full px-3.5 py-2 text-sm font-semibold text-ink-soft transition hover:bg-white/10 hover:text-white">{l}</a>
             ))}
           </nav>
           <div className="flex items-center gap-2">
-            <a href={telLink} className="hidden h-11 items-center gap-2 rounded-full px-4 text-sm font-bold text-ink hover:text-red-700 md:inline-flex"><Phone className="h-4 w-4 text-red-600" /> Call</a>
+            <a href={telLink} className="hidden h-11 items-center gap-2 rounded-full px-4 text-sm font-bold text-ink hover:text-red-300 md:inline-flex"><Phone className="h-4 w-4 text-red-400" /> Call</a>
             <a href="#enquire" className="btn-red hidden h-11 sm:inline-flex">Enquire Now</a>
             <button onClick={() => setOpen(true)} className="flex h-11 w-11 items-center justify-center rounded-full bg-red-600 text-white lg:hidden" aria-label="Open menu" aria-expanded={open}>
               <Menu className="h-5 w-5" />

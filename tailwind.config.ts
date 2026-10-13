@@ -7,7 +7,7 @@ const config: Config = {
     extend: {
       colors: {
         red: {
-          50: "#FFF2F2",
+          50: "#4A0606",
           100: "#FFE1E1",
           200: "#FFC7C7",
           300: "#FF9C9C",
@@ -19,9 +19,11 @@ const config: Config = {
           900: "#5C0404",
           950: "#360202",
         },
-        ink: { DEFAULT: "#1E1516", soft: "#4A3D3F", mute: "#7A6C6E" },
-        mist: "#FBF6F6",
-        line: "#F0E4E4",
+        // Dark maroon theme (client request): text tokens are light, surfaces are deep red.
+        ink: { DEFAULT: "#FFFFFF", soft: "#F1D3D3", mute: "#C79C9C", dark: "#1E1516" },
+        mist: "#2A0101",
+        line: "rgba(255,255,255,0.12)",
+        surface: "#360202",
       },
       fontFamily: {
         sans: ["var(--font-manrope)", "ui-sans-serif", "system-ui", "sans-serif"],
